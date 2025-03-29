@@ -1,0 +1,17 @@
+{
+  "name": "i-love-web",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "liquidjs": "^10.21.0",
+    "markdown-it": "^14.1.0"
+  }
+}
