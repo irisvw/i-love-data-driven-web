@@ -13,14 +13,13 @@ const engine = new Liquid();
 app.engine('liquid', engine.express());
 app.set('views', './views');
 
-// app.get('/', async function (req, res) {
-//     const files = fs.readdirSync('../i-love-data-driven-web/posts');
-//     console.log(files);
-//     res.render('index.liquid', { 
-//         content: testContent,
-//         links: files
-//     });
-// });
+app.get('/', async function (req, res) {
+    const files = fs.readdirSync('../i-love-data-driven-web/posts');
+
+    res.render('index.liquid', { 
+        links: files,
+    });
+});
 
 app.get('/home', async function (req, res) {
     const files = fs.readdirSync('../i-love-data-driven-web/posts');
@@ -33,7 +32,7 @@ app.get('/home', async function (req, res) {
 app.get('/garden', async function (req, res) {
     const files = fs.readdirSync('../i-love-data-driven-web/garden');
 
-    res.render('index.liquid', {
+    res.render('garden.liquid', {
         links: files,
     })
 })
@@ -45,6 +44,11 @@ app.get('/post/:file', async function (req, res) {
     res.render('post.liquid', { 
         content: testContent,
     });
+});
+
+app.get('/garden/:file', async function (req, res) {
+    const file = req.params.file;
+    res.sendFile(`garden/${file}`, { root: '.' });
 });
 
 app.set('port', process.env.PORT || 8000);

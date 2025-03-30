@@ -1,0 +1,11 @@
+{% render 'partials/head.liquid' %}
+
+<main>
+    <ul>
+        {% for link in links %}
+            <li><a href="/garden/{{ link }}">{{ link }}</a></li>
+        {% endfor %}
+    </ul>
+</main>
+
+{% render 'partials/foot.liquid' %}
