@@ -1,9 +1,11 @@
 {% render 'partials/head.liquid' %}
 
 <main>
-    <article>
-        {{ content }}
-    </article>
+    <ul>
+        {% for link in links %}
+            <li><a href="/post/{{ link }}">{{ link }}</a></li>
+        {% endfor %}
+    </ul>
 </main>
 
 {% render 'partials/foot.liquid' %}
