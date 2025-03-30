@@ -37,9 +37,12 @@ header {
 
 body {
     height: 100dvh;
+    margin: 0;
 
     background: pink;
     background: linear-gradient(to top, mintcream, pink);
+
+    color: brown;
 }
 
 main {
@@ -49,8 +52,8 @@ main {
 }
 
 h1 {
-    padding-bottom: .25em;
-    margin-bottom: 0;
+    padding: .5em 0;
+    margin: 0;
     border-bottom: 1px solid black;
 }
 
@@ -69,4 +72,19 @@ article {
 
 ul {
     padding: 0;
+}
+
+.plant-left,
+.plant-right {
+    position: absolute;
+    bottom: 1rem;
+    width: clamp(200px, 50dvw, 400px);
+}
+
+.plant-left {
+    left: 0;
+}
+
+.plant-right {
+    left: 5%;
 }
