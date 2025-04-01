@@ -39,10 +39,11 @@ app.get('/garden', async function (req, res) {
 
 app.get('/post/:file', async function (req, res) {
     const file = req.params.file;
-    const markdownContent = fs.readFileSync(`../i-love-data-driven-web/posts/${file}`, 'utf8');
-    const testContent = md.render(markdownContent);
+    const mdFile = fs.readFileSync(`../i-love-data-driven-web/posts/${file}`, 'utf8');
+    const mdContent = md.render(mdFile);
+
     res.render('post.liquid', { 
-        content: testContent,
+        content: mdContent,
     });
 });
 
